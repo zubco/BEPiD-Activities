@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ALIEN5.TTF">
+            <string>AlienLeague</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image7" translatesAutoresizingMaskIntoConstraints="NO" id="dIn-XQ-hPN">
+                    <rect key="frame" x="27" y="228.5" width="320" height="210"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seu planeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1g-YC-DzB">
+                    <rect key="frame" x="87.5" y="178.5" width="200" height="42"/>
+                    <fontDescription key="fontDescription" name="AlienLeague" family="Alien League" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="precisa de voce" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNd-IH-LBt">
+                    <rect key="frame" x="57" y="446.5" width="261.5" height="42"/>
+                    <fontDescription key="fontDescription" name="AlienLeague" family="Alien League" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="dIn-XQ-hPN" firstAttribute="top" secondItem="b1g-YC-DzB" secondAttribute="bottom" constant="8" id="GaO-bn-Eno"/>
+                <constraint firstItem="dIn-XQ-hPN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QjY-QS-v5I"/>
+                <constraint firstItem="b1g-YC-DzB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Y3s-q2-ymw"/>
+                <constraint firstItem="nNd-IH-LBt" firstAttribute="top" secondItem="dIn-XQ-hPN" secondAttribute="bottom" constant="8" id="f3L-lb-de5"/>
+                <constraint firstItem="nNd-IH-LBt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gDa-Re-E41"/>
+                <constraint firstItem="dIn-XQ-hPN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="v7D-dn-saz"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="image7" width="320" height="210"/>
+    </resources>
+</document>

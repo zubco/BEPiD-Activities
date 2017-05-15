@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zyh-4g-U68">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ALIEN5.TTF">
+            <string>AlienLeague</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Tutorial-->
+        <scene sceneID="Eg5-Wd-ApP">
+            <objects>
+                <viewController id="fjv-Rp-Ipj" customClass="TutorialViewController" customModule="WhereIsWallien" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3JU-ym-7gt"/>
+                        <viewControllerLayoutGuide type="bottom" id="QX0-WM-Lxk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cQF-NT-1Ok">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvP-ia-m4x">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="shR-L0-mPn">
+                                <rect key="frame" x="168" y="617" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kvP-ia-m4x" firstAttribute="top" secondItem="3JU-ym-7gt" secondAttribute="bottom" id="Ajb-0b-xkQ"/>
+                            <constraint firstAttribute="trailing" secondItem="kvP-ia-m4x" secondAttribute="trailing" id="E0H-tu-lvE"/>
+                            <constraint firstItem="kvP-ia-m4x" firstAttribute="centerX" secondItem="shR-L0-mPn" secondAttribute="centerX" id="Ley-G3-E0y"/>
+                            <constraint firstItem="QX0-WM-Lxk" firstAttribute="top" secondItem="shR-L0-mPn" secondAttribute="bottom" constant="13" id="NHh-fo-cp3"/>
+                            <constraint firstItem="kvP-ia-m4x" firstAttribute="leading" secondItem="cQF-NT-1Ok" secondAttribute="leading" id="Om9-n5-Kyz"/>
+                            <constraint firstItem="kvP-ia-m4x" firstAttribute="bottom" secondItem="QX0-WM-Lxk" secondAttribute="top" id="p5e-Qd-8b2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tutorial" id="crG-z0-EXN">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="aAt-rn-wL0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Skip" id="5IC-9g-07A">
+                            <connections>
+                                <segue destination="XmK-Xh-7FM" kind="show" id="ycQ-5m-u25"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pageControl" destination="shR-L0-mPn" id="voz-p6-uI0"/>
+                        <outlet property="scrollView" destination="kvP-ia-m4x" id="IXH-lI-hAk"/>
+                        <outlet property="skipButton" destination="5IC-9g-07A" id="vHM-zr-nl2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5l-oA-glY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-866" y="922"/>
+        </scene>
+        <!--Find him!-->
+        <scene sceneID="vrc-md-2Tm">
+            <objects>
+                <viewController id="XmK-Xh-7FM" customClass="GameViewController" customModule="WhereIsWallien" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="090-PE-CLj"/>
+                        <viewControllerLayoutGuide type="bottom" id="tWp-3W-Plp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ms4-MM-EBf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbv-05-06H">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcu-KL-x5U">
+                                        <rect key="frame" x="0.0" y="0.0" width="1795" height="1122"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvx-7u-Gz7">
+                                                <rect key="frame" x="98" y="963" width="40" height="70"/>
+                                                <color key="backgroundColor" red="0.094268980201283381" green="0.141695773609955" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="LmN-9A-vH6"/>
+                                                    <constraint firstAttribute="height" constant="70" id="MKb-72-LJd"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="dAe-mR-2CF" kind="show" id="XYW-uv-Hpo"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WallienMap" translatesAutoresizingMaskIntoConstraints="NO" id="kcy-Q3-ip7">
+                                                <rect key="frame" x="0.0" y="8" width="1795" height="1122"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="vvx-7u-Gz7" secondAttribute="bottom" constant="89" id="CIQ-jP-dsQ"/>
+                                            <constraint firstAttribute="height" constant="1122" id="mMp-an-lV3"/>
+                                            <constraint firstAttribute="width" constant="1795" id="pTP-Ob-kYx"/>
+                                            <constraint firstItem="vvx-7u-Gz7" firstAttribute="leading" secondItem="Pcu-KL-x5U" secondAttribute="leading" constant="98" id="yAS-3Q-ycQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Pcu-KL-x5U" secondAttribute="trailing" constant="-1420" id="1DF-yn-rv8"/>
+                                    <constraint firstItem="Pcu-KL-x5U" firstAttribute="top" secondItem="gbv-05-06H" secondAttribute="top" id="7AH-PJ-3Zp"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pcu-KL-x5U" secondAttribute="bottom" constant="-519" id="ATR-du-NSS"/>
+                                    <constraint firstItem="Pcu-KL-x5U" firstAttribute="leading" secondItem="gbv-05-06H" secondAttribute="leading" id="BE6-aN-zem"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="5" bottom="8" right="8"/>
+                            </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mVx-Vr-KOb" customClass="ClockView" customModule="WhereIsWallien" customModuleProvider="target">
+                                <rect key="frame" x="270" y="560" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95639318227767944" green="0.96844011545181274" blue="0.98496979475021362" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tWp-3W-Plp" firstAttribute="top" secondItem="gbv-05-06H" secondAttribute="bottom" id="Hmh-e5-O3s"/>
+                            <constraint firstItem="gbv-05-06H" firstAttribute="leading" secondItem="ms4-MM-EBf" secondAttribute="leading" id="Qyg-vW-eaK"/>
+                            <constraint firstItem="gbv-05-06H" firstAttribute="top" secondItem="090-PE-CLj" secondAttribute="bottom" constant="-64" id="SV2-jl-2PQ"/>
+                            <constraint firstAttribute="trailing" secondItem="gbv-05-06H" secondAttribute="trailing" id="mjR-Ma-EJx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Find him!" id="sV9-ln-cbR"/>
+                    <connections>
+                        <outlet property="clockView" destination="mVx-Vr-KOb" id="Hg9-FJ-Nik"/>
+                        <outlet property="contentView" destination="Pcu-KL-x5U" id="8ph-18-5Lq"/>
+                        <outlet property="scrollView" destination="gbv-05-06H" id="r9Q-Nj-ShF"/>
+                        <segue destination="U6S-mi-nV2" kind="show" identifier="fail" id="S20-wA-A5U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65c-qQ-OVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="52.623688155922046"/>
+        </scene>
+        <!--End Game View Controller-->
+        <scene sceneID="xOY-CN-Vl6">
+            <objects>
+                <viewController title="End Game View Controller" id="dAe-mR-2CF" customClass="EndGameViewController" customModule="WhereIsWallien" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xXz-5R-d2P"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bem-pp-j3O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9uK-96-VNJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congratulations! You saved the Earth!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxr-UB-vAk">
+                                <rect key="frame" x="0.0" y="137" width="375" height="299"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AlienLeague" family="Alien League" pointSize="53"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="The End" id="0qq-ab-5rz">
+                        <barButtonItem key="rightBarButtonItem" title="Return to Menu" id="3Pn-Nh-3te">
+                            <connections>
+                                <action selector="returnPressed:" destination="dAe-mR-2CF" id="bpZ-ZM-bYp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Igo-VF-1FW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="53"/>
+        </scene>
+        <!--Fail-->
+        <scene sceneID="9Be-Rx-CcV">
+            <objects>
+                <viewController title="Fail" id="U6S-mi-nV2" customClass="FailViewController" customModule="WhereIsWallien" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gXg-zr-otX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hud-2M-WLE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GGu-jw-kLo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have failed to save the Earth..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MQ-fA-pZm">
+                                <rect key="frame" x="0.0" y="174" width="375" height="299"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AlienLeague" family="Alien League" pointSize="53"/>
+                                <color key="textColor" red="1" green="0.028078071964938167" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="DEFEAT!" id="3uZ-f1-Spe">
+                        <barButtonItem key="rightBarButtonItem" title="Return to Menu" id="sS1-qG-fRH">
+                            <connections>
+                                <action selector="returnPressed:" destination="U6S-mi-nV2" id="ktO-Mj-PWO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TvF-QD-r1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="922"/>
+        </scene>
+        <!--Where is Wallien?-->
+        <scene sceneID="Reh-Re-M3B">
+            <objects>
+                <viewController id="xIr-Uh-aDx" customClass="WallienPlayerViewController" customModule="WhereIsWallien" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="37j-aG-cOK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nhp-5h-ZSq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SwV-Ee-tlz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="ZGg-1z-kEA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mL0-2v-gDA" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fbh-fr-9sX">
+                                                <rect key="frame" x="127" y="366" width="180" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="l9Z-oU-6gs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jogador" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqy-xD-obs">
+                                                <rect key="frame" x="55" y="366" width="64" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHERE IS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCr-xL-eGA">
+                                                <rect key="frame" x="115" y="0.0" width="145.5" height="42"/>
+                                                <fontDescription key="fontDescription" name="AlienLeague" family="Alien League" pointSize="40"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WALLIEN ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqL-oA-mbw">
+                                                <rect key="frame" x="106" y="299" width="163" height="42"/>
+                                                <fontDescription key="fontDescription" name="AlienLeague" family="Alien League" pointSize="40"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Wallien" translatesAutoresizingMaskIntoConstraints="NO" id="gTt-6D-f9k">
+                                                <rect key="frame" x="20" y="50" width="334" height="241"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="241" id="Os8-Ho-m3W"/>
+                                                    <constraint firstAttribute="width" constant="334" id="v7v-FT-mJz"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0W-vg-5bI">
+                                                <rect key="frame" x="145" y="404" width="84" height="59"/>
+                                                <fontDescription key="fontDescription" name="AlienLeague" family="Alien League" pointSize="45"/>
+                                                <state key="normal" title="Play"/>
+                                                <connections>
+                                                    <segue destination="fjv-Rp-Ipj" kind="show" identifier="goToTutorial" id="YLn-rP-NxD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="gTt-6D-f9k" firstAttribute="top" secondItem="bCr-xL-eGA" secondAttribute="bottom" constant="8" id="1VO-Y2-vun"/>
+                                            <constraint firstItem="aqy-xD-obs" firstAttribute="centerY" secondItem="Fbh-fr-9sX" secondAttribute="centerY" id="60j-Om-Kqe"/>
+                                            <constraint firstItem="bCr-xL-eGA" firstAttribute="top" secondItem="mL0-2v-gDA" secondAttribute="top" id="6hX-MH-UZG"/>
+                                            <constraint firstItem="hqL-oA-mbw" firstAttribute="top" secondItem="gTt-6D-f9k" secondAttribute="bottom" constant="8" id="8bH-Bi-QwM"/>
+                                            <constraint firstItem="hqL-oA-mbw" firstAttribute="centerX" secondItem="mL0-2v-gDA" secondAttribute="centerX" id="EY2-PL-GB6"/>
+                                            <constraint firstItem="gTt-6D-f9k" firstAttribute="centerX" secondItem="mL0-2v-gDA" secondAttribute="centerX" id="FGj-0a-3xq"/>
+                                            <constraint firstItem="d0W-vg-5bI" firstAttribute="centerX" secondItem="mL0-2v-gDA" secondAttribute="centerX" id="GW4-Zp-1jm"/>
+                                            <constraint firstItem="aqy-xD-obs" firstAttribute="leading" secondItem="mL0-2v-gDA" secondAttribute="leading" constant="55" id="K3f-an-9oU"/>
+                                            <constraint firstItem="aqy-xD-obs" firstAttribute="height" secondItem="Fbh-fr-9sX" secondAttribute="height" id="R4d-Nm-yeP"/>
+                                            <constraint firstItem="bCr-xL-eGA" firstAttribute="centerX" secondItem="mL0-2v-gDA" secondAttribute="centerX" id="WoX-Jo-0Fv"/>
+                                            <constraint firstItem="d0W-vg-5bI" firstAttribute="top" secondItem="Fbh-fr-9sX" secondAttribute="bottom" constant="8" id="dec-Uw-1dz"/>
+                                            <constraint firstItem="Fbh-fr-9sX" firstAttribute="top" secondItem="hqL-oA-mbw" secondAttribute="bottom" constant="25" id="gFG-mj-suS"/>
+                                            <constraint firstItem="Fbh-fr-9sX" firstAttribute="leading" secondItem="aqy-xD-obs" secondAttribute="trailing" constant="8" id="oGv-mT-iId"/>
+                                            <constraint firstItem="hqL-oA-mbw" firstAttribute="height" secondItem="bCr-xL-eGA" secondAttribute="height" id="qfJ-1r-G7u"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mL0-2v-gDA" secondAttribute="trailing" id="ONx-zD-ubS"/>
+                                    <constraint firstItem="mL0-2v-gDA" firstAttribute="height" secondItem="ZGg-1z-kEA" secondAttribute="height" id="WlS-fd-k92"/>
+                                    <constraint firstAttribute="bottom" secondItem="mL0-2v-gDA" secondAttribute="bottom" constant="-128" id="cak-Mk-Rbz"/>
+                                    <constraint firstItem="mL0-2v-gDA" firstAttribute="centerY" secondItem="ZGg-1z-kEA" secondAttribute="centerY" id="gy8-P2-49D"/>
+                                    <constraint firstItem="mL0-2v-gDA" firstAttribute="centerX" secondItem="ZGg-1z-kEA" secondAttribute="centerX" id="poU-Kl-hZT"/>
+                                    <constraint firstItem="mL0-2v-gDA" firstAttribute="width" secondItem="ZGg-1z-kEA" secondAttribute="width" id="seq-PG-w3k"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKm-lL-Jkz">
+                                <rect key="frame" x="335" y="75" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="fjv-Rp-Ipj" kind="show" identifier="helpSegue" id="Sma-Cc-MmX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZGg-1z-kEA" firstAttribute="bottom" secondItem="Nhp-5h-ZSq" secondAttribute="top" id="Odk-Bu-vQz"/>
+                            <constraint firstItem="ZGg-1z-kEA" firstAttribute="width" secondItem="SwV-Ee-tlz" secondAttribute="width" id="eIO-vk-HnW"/>
+                            <constraint firstItem="ZGg-1z-kEA" firstAttribute="top" secondItem="37j-aG-cOK" secondAttribute="bottom" id="kLz-2Y-TON"/>
+                            <constraint firstItem="ZGg-1z-kEA" firstAttribute="centerX" secondItem="SwV-Ee-tlz" secondAttribute="centerX" id="w9l-s7-kzE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Where is Wallien?" id="vbJ-Wc-udM">
+                        <barButtonItem key="backBarButtonItem" title="Main Menu" id="XLA-gg-3lW"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentView" destination="mL0-2v-gDA" id="W90-mo-vco"/>
+                        <outlet property="scrollView" destination="ZGg-1z-kEA" id="p1z-h8-qwU"/>
+                        <outlet property="textField" destination="Fbh-fr-9sX" id="yv7-z5-LuO"/>
+                        <segue destination="XmK-Xh-7FM" kind="show" identifier="bypass" id="KRf-jH-x8P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="25c-Xi-uxC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-866.39999999999998" y="52.623688155922046"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fAS-0D-fSg">
+            <objects>
+                <navigationController id="Zyh-4g-U68" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="n2w-Jk-oeq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xIr-Uh-aDx" kind="relationship" relationship="rootViewController" id="kPe-P8-cMl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3b-Z7-KhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1775" y="53"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Wallien" width="150" height="150"/>
+        <image name="WallienMap" width="1795" height="1122"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KRf-jH-x8P"/>
+        <segue reference="Sma-Cc-MmX"/>
+    </inferredMetricsTieBreakers>
+</document>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Data Source-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="GraphicViewController" customModule="CustomViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8T-zf-olS" customClass="GraphicView" customModule="CustomViewSample" customModuleProvider="target">
+                                <rect key="frame" x="27" y="30" width="300" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQv-CA-za5">
+                                        <rect key="frame" x="9" y="3" width="33" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Dr6-qo-qc7"/>
+                                    <constraint firstAttribute="height" constant="250" id="zUX-Lc-NeJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="AMZN"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.9725266695" green="0.3478437117990138" blue="0.076726145510157773" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="1" green="0.64128598258082048" blue="0.060210061081366617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="6Bx-9B-mjF"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qsw-F7-ao9" customClass="GraphicView" customModule="CustomViewSample" customModuleProvider="target">
+                                <rect key="frame" x="27" y="301" width="300" height="250"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stock" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNn-vV-cmN">
+                                        <rect key="frame" x="9" y="3" width="33" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="pAo-m7-0Lc"/>
+                                    <constraint firstAttribute="height" constant="250" id="v0Y-r0-wVJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="AAPL"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.9725266695" green="0.34784371180000001" blue="0.076726145509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="1" green="0.67604465810000003" blue="0.059026786060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="fFQ-rR-Knd"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCh-ir-HY7">
+                                <rect key="frame" x="161" y="584" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refresh:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ACw-k4-fSh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bCh-ir-HY7" firstAttribute="top" secondItem="qsw-F7-ao9" secondAttribute="bottom" constant="33" id="CR7-7O-4aI"/>
+                            <constraint firstItem="qsw-F7-ao9" firstAttribute="top" secondItem="P8T-zf-olS" secondAttribute="bottom" constant="21" id="XwP-TG-izy"/>
+                            <constraint firstItem="qsw-F7-ao9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="11" id="cAW-Z3-tqi"/>
+                            <constraint firstItem="bCh-ir-HY7" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="juf-3T-tmc"/>
+                            <constraint firstItem="P8T-zf-olS" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="lh7-EN-jBV"/>
+                            <constraint firstItem="qsw-F7-ao9" firstAttribute="leading" secondItem="P8T-zf-olS" secondAttribute="trailing" constant="18" id="tOU-cO-gzt"/>
+                            <constraint firstItem="qsw-F7-ao9" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="10" id="yiI-IQ-0ke"/>
+                            <constraint firstItem="P8T-zf-olS" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="11" id="zhM-yP-89Z"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lh7-EN-jBV"/>
+                                <exclude reference="zhM-yP-89Z"/>
+                                <exclude reference="XwP-TG-izy"/>
+                                <exclude reference="cAW-Z3-tqi"/>
+                                <exclude reference="tOU-cO-gzt"/>
+                                <exclude reference="yiI-IQ-0ke"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="lh7-EN-jBV"/>
+                                <include reference="zhM-yP-89Z"/>
+                                <exclude reference="XwP-TG-izy"/>
+                                <exclude reference="cAW-Z3-tqi"/>
+                                <include reference="tOU-cO-gzt"/>
+                                <include reference="yiI-IQ-0ke"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="lh7-EN-jBV"/>
+                                <include reference="zhM-yP-89Z"/>
+                                <include reference="XwP-TG-izy"/>
+                                <include reference="cAW-Z3-tqi"/>
+                                <exclude reference="tOU-cO-gzt"/>
+                                <exclude reference="yiI-IQ-0ke"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="graphicViewAAPL" destination="qsw-F7-ao9" id="h5c-2q-yvm"/>
+                        <outlet property="graphicViewAMZN" destination="P8T-zf-olS" id="WmF-Ce-8rx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.199999999999999" y="37.331334332833585"/>
+        </scene>
+    </scenes>
+</document>

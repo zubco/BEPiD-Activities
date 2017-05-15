@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ALIEN5.TTF">
+            <string>AlienLeague</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image3" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-pK-BxY">
+                    <rect key="frame" x="27.5" y="228.5" width="320" height="210"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encontre-o..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWs-Ut-O3y">
+                    <rect key="frame" x="80" y="178.5" width="216" height="42"/>
+                    <fontDescription key="fontDescription" name="AlienLeague" family="Alien League" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e salve O MUNDO!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqu-a1-zTs">
+                    <rect key="frame" x="45.5" y="446.5" width="285" height="42"/>
+                    <fontDescription key="fontDescription" name="AlienLeague" family="Alien League" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OGA-pK-BxY" firstAttribute="top" secondItem="hWs-Ut-O3y" secondAttribute="bottom" constant="8" symbolic="YES" id="TLY-6y-GsD"/>
+                <constraint firstItem="OGA-pK-BxY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VWt-yX-mqs"/>
+                <constraint firstItem="OGA-pK-BxY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rcV-cL-Zlj"/>
+                <constraint firstItem="jqu-a1-zTs" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="s5t-LS-vcL"/>
+                <constraint firstItem="jqu-a1-zTs" firstAttribute="top" secondItem="OGA-pK-BxY" secondAttribute="bottom" constant="8" symbolic="YES" id="uGD-gN-TP4"/>
+                <constraint firstItem="hWs-Ut-O3y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xMJ-rm-Pu4"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="image3" width="320" height="210"/>
+    </resources>
+</document>
