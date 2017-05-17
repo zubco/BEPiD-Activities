@@ -24,6 +24,7 @@ class ViewController: UIViewController, MarvelApiRequestDelegate, UISearchBarDel
     // indicador de atividade
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
+    let database = MarvelHeroesDatabase()
     
     /// Esconde a status Bar
     override var prefersStatusBarHidden: Bool
@@ -44,7 +45,9 @@ class ViewController: UIViewController, MarvelApiRequestDelegate, UISearchBarDel
 
         // executa a requisição
         marvelRequest.execute()
-
+        
+        database.execute()
+        
         // indicator de atividade
         activityIndicator.startAnimating()
     }

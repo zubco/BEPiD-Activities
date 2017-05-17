@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MarvelHeroesDatabase: NSObject {
+class MarvelHeroesDatabase: NSObject, MarvelApiRequestDelegate {
     
     // TODO: Implementar esta classe com a responsabilidade de baixar todos os heróis
     // retornados pela API (1485 até esse momento)
@@ -32,5 +32,37 @@ class MarvelHeroesDatabase: NSObject {
     // 
     // - A API retorna um count, quando o offset chegar no fim dos resultados o count será zero, isso
     //   pode ser usado de condição para parar as requisições
+    
+    fileprivate var responseCount = 100
+    let defaults = UserDefaults()
+    //Contador de requests. Atualizado a cada request para determinar o offset.
+    fileprivate var numberOfRequests = 0
+    
+    func execute(){
+        let requestParameters = ["offset": String(self.numberOfRequests*100), "limit": String(100)]
+        let marvelRequest = MarvelApiRequest(operation: .Characters, parameters: requestParameters, delegate: self)
+        marvelRequest.execute()
+        numberOfRequests += 1
+    }
+    
+    /// Recebe a lista de herois para preencher na interface
+    ///
+    /// - Parameter characters: lista de herois
+    func didFinish(characters: [MarvelCharacter]){
+        responseCount = characters.count
+
+        for char in characters{
+            defaults.set(char, forKey: char.name!)
+            print(defaults.object(forKey: char.name!)!)
+        }
+        
+        if (responseCount == 100){
+            let requestParameters = ["offset": String(self.numberOfRequests*100), "limit": String(100)]
+            let marvelRequest = MarvelApiRequest(operation: .Characters, parameters: requestParameters, delegate: self)
+            marvelRequest.execute()
+            numberOfRequests += 1
+        }
+        
+    }
 
 }
