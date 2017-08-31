@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Silly Blowfish View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SillyBlowfishViewController" customModule="SillyBlowfish" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="1xt-FQ-lfA">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODF-OG-fyH" customClass="SillyBlowfishView" customModule="SillyBlowfish" customModuleProvider="target">
+                                <rect key="frame" x="96" y="123" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="6ct-aG-qDk"/>
+                                    <constraint firstAttribute="width" constant="200" id="mSn-SC-Nz1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentSize">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentFrame">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentMouth">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shell" translatesAutoresizingMaskIntoConstraints="NO" id="wiA-HS-QL4">
+                                <rect key="frame" x="291" y="583" width="64" height="64"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="1xt-FQ-lfA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="0h2-5A-PHp"/>
+                            <constraint firstItem="ODF-OG-fyH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="80" id="4ZZ-wX-2ak"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1xt-FQ-lfA" secondAttribute="bottom" id="OcP-hu-Vkg"/>
+                            <constraint firstItem="1xt-FQ-lfA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="c9s-Da-ddM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wiA-HS-QL4" secondAttribute="bottom" constant="20" id="eBC-og-les"/>
+                            <constraint firstAttribute="trailing" secondItem="wiA-HS-QL4" secondAttribute="trailing" constant="20" id="j7X-cz-2AG"/>
+                            <constraint firstAttribute="trailing" secondItem="1xt-FQ-lfA" secondAttribute="trailing" id="us9-jF-WQ2"/>
+                            <constraint firstItem="ODF-OG-fyH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="103" id="vpx-dM-ajY"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XbM-Re-nFk" appends="YES" id="9tY-OO-Is2"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="fish" destination="ODF-OG-fyH" id="Xgo-ux-whR"/>
+                        <outlet property="shell" destination="wiA-HS-QL4" id="E8a-gH-vw9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="XbM-Re-nFk">
+                    <connections>
+                        <action selector="tap:" destination="BYZ-38-t0r" id="DQQ-b3-dlY"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background" width="5955" height="3251"/>
+        <image name="Shell" width="64" height="64"/>
+    </resources>
+</document>

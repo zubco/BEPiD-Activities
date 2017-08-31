@@ -1,0 +1,1285 @@
+<!DOCTYPE html><html>
+
+<head>
+<meta charset="utf-8">
+<title>Spritekit</title>
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+</head>
+<body>
+<h1 id="toc_0">SpriteKit</h1>
+
+<p>Vamos explorar alguns recursos do framework SpriteKit que é feito para desenvolvimento de jogos 2D no iOS.</p>
+
+<p>Abra o Xcode e no File -&gt; New -&gt; Project escolha iOS Application e o template Game
+<img src="images/gameproject.png" alt=""></p>
+
+<p>Escolha o nome do projeto como SurvivorAstronaut, liguagem Swift, techonology Spritekit e Devices iPhone
+<img src="images/projectname.png" alt=""></p>
+
+<p>Vamos fazer um jogo que só funcionará em modo portrait, portando desmarque Landscape Left e Landscape Right no target do projeto.
+<img src="images/portrait.png" alt=""></p>
+
+<p>Será criada uma App com um StoryBoard e um GameViewController. O GameViewController aparentemente é um View Controller comum, com uma diferença sua view principal é do tipo SKView que é o equivalente ao UIView do spritekit
+<img src="images/skview.png" alt=""></p>
+
+<p>Se executarmos o projeto podemos verificar que no template existe uma implementação com um Label de Hello World, e se clicarmos em qualquer lugar é um efeito aparece no lugar que foi tocado.
+<img src="images/helloworld.png" alt=""></p>
+
+<p>Interessante notar a indicação abaixo na tela na qual o Spritekit informa o número de nós que atualmente estão na tela, além disso você tem uma constante visualização do frame rate, que em casos ideais deveria sempre estar em torno de 60 fps (frames for segundo). Importante é que o simulador não apresenta a mesma performance que um dispositivo, portanto se quiser acompanhar corretamente o frame rate você precisará desenvolver usando seu dispositivo iOS.</p>
+
+<p>O SpriteKit trabalha com SKScene para representar as telas do seu jogo, de fato o XCode já criou uma SKScene para você chamada GameScene.swift, além disso temos uma novidade que é uma representação visual da tela no arquivo GameScene.sks que pode ser entendido como se fosse um arquivo de storyboard da sua Scene.</p>
+
+<p>No nosso GameScene.swift vamos apagar o código do Hello World. Seu resultado final deverá ser apenas os métodos vazios abaixo</p>
+
+<pre><code>
+    override func didMove(to view: SKView) {
+        
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+       
+    }</code></pre>
+
+<p>Agora que nos livramos do código do Hello world vamos começar a criar nosso jogo.</p>
+
+<h2 id="toc_1">O Jogo</h2>
+
+<p>Nosso jogo será de um astronauta que está na orbita da terra e de repente se inicia uma chuva de asteróides, que não causam mal algum para o planeta e somem na atmosfera da terra, mas se acertarem nosso pequeno herói podem machucar muito.</p>
+
+<p>Seu objetivo será fugir dos asteróides e sobreviver, usando os controle de swipe horizontal para mover nosso herói.</p>
+
+<h2 id="toc_2">SKScene</h2>
+
+<p>Já temos criada nossa SKScene chamada GameScene, vamos clicar no GameScene.sks</p>
+
+<p>Primeiro apague a helloLabel.</p>
+
+<p><img src="images/gamescene.png" alt=""></p>
+
+<p>Vamos alterar as propriedades</p>
+
+<p>Name: world</p>
+
+<p>Size: W 640 H 1136</p>
+
+<p>Anchor Point: 0.5 0.5
+<img src="images/gamesceneprops.png" alt=""></p>
+
+<p>Aqui estamos colocando as dimensões iPhone5s Portrait apenas como referência visual, além disso setamos o anchor point para (0.5,0.5) para colocar a origem (0,0) no centro da tela, isso vai facilitar os cálculos para este jogo. </p>
+
+<p>Uma coisa importante é que na SKScene por padrão a origem (0,0) se encontra no canto inferior esquerdo, similar ao eixo cartesiano (X,Y) com Y crescendo para cima, assim Y aqui é invertido em relação a UIViews no UIKit.</p>
+
+<p>Agora vamos copiar todos os arquivos de recursos que vamos usar no nosso jogo. No Finder abra na pasta Assets fornecida selecione todos os diretórios.
+<img src="images/assets.png" alt=""></p>
+
+<p>Arraste esses diretórios para dentro do projeto no XCode
+<img src="images/dragassets.png" alt=""></p>
+
+<p>Na janela que abre garanta que Copy items if needed esteja selecionado, a opção de Create Groups esteja ligada e o target principal do projeto também esteja selecionado.
+<img src="images/assetswindow.png" alt=""></p>
+
+<p>Agora no XCode abra o folder Images e vamos migrar os 2 arquivos de imagem para dentro do Images.xcassets, para isso selecione o Images.xcassets e arraste os arquivos de imagem pixel<em>astronault.png e pixel</em>earth.png para dentro dele. Ah e apague o Spaceship que pertencia ao Hello World.
+<img src="images/images_xcassets.png" alt=""></p>
+
+<p>Com isso você pode apagar o folder Images com as duas imagens que estavam dentro dele com Delete -&gt; Move to Trash
+<img src="images/deleteimages2.png" alt=""></p>
+
+<h2 id="toc_3">Fonte</h2>
+
+<p>Voce incluiu uma fonte I-pixel-u.ttf e agora vamos configurar o Aplicativo para usá-la.
+Dentro de Supporting Files -&gt; selecione o arquivo Info.plist
+E na &quot;Information Property List&quot; clique o + e adicione o novo valor
+&quot;Fonts provided by application&quot; 
+<img src="images/infoplist.png" alt="">
+E adicione o valor I-pixel-u.ttf (o primeiro caracter é a vogal i maíuscula e não a consoante l) 
+<img src="images/font-name.png" alt="">
+Ok, esta fonte é 100% free do http://www.dafont.com/i-pixel-u.font vamos instalar a fonte no nosso Mac para visualisar no XCode.
+Para isso vá no Finder e selecione o arquivo I-pixel-u.ttf da fonte em Assests-&gt;Font 
+<img src="images/finder-font.png" alt="">
+Pressione a barra de espaço para ver o preview do arquivo
+Clique no botão superior direito &quot;Open with font Book&quot;
+<img src="images/font-preview.png" alt="">
+Clique no botão &quot;Install Font&quot; 
+<img src="images/font-book.png" alt="">
+Pode ser que o sistema reclame da fonte não oferecer todos os tipos, mas tudo bem, selecione a fonte e clique em &quot;Install Checked&quot;.
+<img src="images/font-install.png" alt="">
+Ok a fonte já está disponível no Mac e também já está configurada no nosso projeto.</p>
+
+<h2 id="toc_4">Adicionando Sprites</h2>
+
+<p>Vamos começar e editar nossa GameScene.sks adicionando Sprites.
+Clique na nossa GameScene.sks e araste um Color Sprite para o centro dela.
+<img src="images/colorsprite.png" alt=""></p>
+
+<p>Agora altere as propriedade desse novo sprite, ele será o nosso planeta:</p>
+
+<p>Name: planet</p>
+
+<p>Texture: pixel_earth.png</p>
+
+<p>Size: W 100 H 100</p>
+
+<p>Anchor Point: 0.5 0.5</p>
+
+<p>Position: X 0 Y 0
+<img src="images/planetsprite.png" alt=""></p>
+
+<p>Se você executar o projeto verá que agora o planeta já está sendo exibido na tela, note que a label de debug abaixo já mostra numero de nodes, bem como o frame rate que se mantém 60 frames por segundo.
+<img src="images/gameplanet.png" alt=""></p>
+
+<p>Mais abaixo nas propriedades do planeta vamos adicionar um corpo físico para nosso planeta pois vamos usar isso para detectar colisões, porém não queremos que ele seja afetado pela gravidade.</p>
+
+<p>Na sessão Phisics Definition altere as propriedades:</p>
+
+<p>Body type: Bounding Circle</p>
+
+<p>selecione Dynamic</p>
+
+<p>desmarque Allows Rotation e Affected by Gravity</p>
+
+<p><img src="images/planetbody.png" alt=""></p>
+
+<p>Os demais valores de Category e Collision vamos preencher via código, para ficar mais compreensível.</p>
+
+<p>Bom, agora vamos adicionar nosso herói adicione outro ColorSprite do lado direito do planeta.
+E altere as propriedades:</p>
+
+<p>Name: astronaut</p>
+
+<p>Parent: planet</p>
+
+<p>Testure: pixel_astronault</p>
+
+<p>Position: X 100  Y 0</p>
+
+<p>Anchor Point: X 0.5  Y 0.5
+<img src="images/astronautsprite.png" alt=""></p>
+
+<p>Na sessão Phisics Definition do nosso astronaut altere as propriedades de maneira similar ao que fizemos para o planet:</p>
+
+<p>Body type: Bounding Circle</p>
+
+<p>selecione Dynamic</p>
+
+<p>desmarque Allows Rotation e Affected by Gravity
+<img src="images/astronautbody.png" alt=""></p>
+
+<p>Agora vamos adicionar um label no topo da tela
+<img src="images/label.png" alt=""></p>
+
+<p>No SpriteKit o label é um SKLabel, vamos alterar o texto e a fonte do nosso label</p>
+
+<p>Text: SCORE</p>
+
+<p>Font: I pixel u (tamanho 32)</p>
+
+<p><img src="images/score_font.png" alt=""></p>
+
+<p>Copie e cole este label para criarmos mais um label do lado e altere as propriedades:</p>
+
+<p>Name: scoreLabel</p>
+
+<p>Horizontal Align: Left</p>
+
+<p>Text: 99999</p>
+
+<p><img src="images/scorelabel.png" alt=""></p>
+
+<p>Este label será a contagem de pontos do usuário, agora vamos adicionar as vidas do nosso astronaulta.</p>
+
+<p>Arraste um ColorSprite abaixo do label score </p>
+
+<p>Texture : pixel_astronaut.png</p>
+
+<p><img src="images/pixel_astronaut.png" alt=""></p>
+
+<p>Copie mais uma vez o label SCORE criando um label com texto &quot;x&quot;</p>
+
+<p>Text: x</p>
+
+<p><img src="images/xlabel.png" alt=""></p>
+
+<p>Por fim, mais uma vez o label SCORE criando um label com texto &quot;5&quot; que será o número de vidas</p>
+
+<p>Name: livesLabel</p>
+
+<p>Text: 5</p>
+
+<p><img src="images/liveslabel.png" alt=""></p>
+
+<p>Se executar você deveria ter um visual semelhante a este abaixo, veja que temos 8 nodes agora.
+<img src="images/initialscene.png" alt=""></p>
+
+<h2 id="toc_5">Sistemas de Partículas</h2>
+
+<p>Nosso astronaulta está sozinho no espaço, mas um fundo inteiro preto não está parecendo muito o espaço de verdade, vamos adicionar umas estrelas para fazer ele mais real.</p>
+
+<p>Jogos geralmente possuem sistemas de partículas ou SKEmitterNodes do spritekit. Sistemas de partículas são muito usados para quando temos elementos que as arestas são difíceis de modelar em um único objeto, por exemplo, fogo, fumaça, etc. </p>
+
+<p>Nós poderíamos simplesmente arrastar um Emitter e configurá-lo, mas vamos usar o editor visual que o Spritekit possui para isso.</p>
+
+<p>No menu do XCode Clique em File -&gt; New -&gt; File... e crie um Spritekit Particle </p>
+
+<p><img src="images/newparticle.png" alt=""></p>
+
+<p>Escolha o template de Rain</p>
+
+<p><img src="images/rain.png" alt=""></p>
+
+<p>Nomeie o arquivo de StarField.sks</p>
+
+<p>Se você selecionar o arquivo verá um editor visual que já anima o sistema de partículas</p>
+
+<p><img src="images/rainparticles.png" alt=""></p>
+
+<p>Vamos alterar umas propriedades e fazer nosso sistema parecer com estrelas.</p>
+
+<p>Lifetime: Start 1</p>
+
+<p>Position Range: X 1000  Y 1000</p>
+
+<p>Angle: Start 0  Range 0</p>
+
+<p>Speed: Start 0  Range 0</p>
+
+<p>Acceleration: X 0   Y 0</p>
+
+<p>Scale: Start 0.1 Range 0.1 Speed -0.01</p>
+
+<p>Color Ramp: com duas cores ClearColor (0% opacity) e White Color</p>
+
+<p><img src="images/starfield.png" alt=""></p>
+
+<p>Pronto agora nosso sistema de partículas parece um fundo de estrelas piscando. Sistemas de partículas são muito poderosos, investigue depois os outros templates.</p>
+
+<p>Clique novamente na nossa GameScene.sks e vamos arrastar o sistema de partículas Starfield.sks para dentro dela alterando a posição para o centro</p>
+
+<p>Position: X 0  Y 0</p>
+
+<p><img src="images/starfieldemitter.png" alt=""></p>
+
+<p>Perceba que foi criado um Emitter exatamente com os valores que configuramos, embora criar o arquivo StarField.sks não fosse necessário, é interessante usá-lo pois ele apresenta o resultado em tempo real do seu sistema de partículas conforme você edita os valores.</p>
+
+<p>Execute novamente e veja que agora nosso astronauta parece estar mesmo no espaço.</p>
+
+<p><img src="images/starfieldresult.png" alt=""></p>
+
+<p>É sempre bom ficar de olho no frame rate quando adicionados sistemas de partículas</p>
+
+<h2 id="toc_6">Vídeo</h2>
+
+<p>Vídeos são muito comuns de serem usados em jogos, vamos imcrementar mais nosso background incluindo um vídeo em loop que vai ficar no fundo.</p>
+
+<p>No arquivo GameScene.swift adicione o import AVFoundation e adicione uma propriedade AVPlayer</p>
+
+<pre><code>import AVFoundation
+
+class GameScene: SKScene {
+    
+    var bgVideoPlayer: AVPlayer!
+</code></pre>
+
+<p>Agora criando um init no GameScene vamos inicializar o bgVideoPlayer que vai criar uma instância de um AVPlayer.</p>
+
+<pre><code> required init?(coder aDecoder: NSCoder) {
+        
+        super.init(coder: aDecoder)
+        
+        let filePath = Bundle.main.path(forResource: &quot;background&quot;, ofType: &quot;mp4&quot;)!
+        
+        let url = URL(fileURLWithPath: filePath)
+        
+        self.bgVideoPlayer = AVPlayer(url: url)
+        self.bgVideoPlayer.actionAtItemEnd = .none
+        
+        NotificationCenter.default.addObserver(self,
+                        selector: #selector(GameScene.bgVideoDidEnd(notification:)),
+                        name: .AVPlayerItemDidPlayToEndTime,
+                        object: self.bgVideoPlayer.currentItem)
+    
+        
+        //VIDEO BACKGROUND
+        let videoNode = SKVideoNode(avPlayer: self.bgVideoPlayer)
+        
+        videoNode.size = self.size
+        videoNode.zPosition = -1
+        videoNode.alpha = 0.4
+        
+        self.addChild(videoNode)
+        
+        videoNode.play()
+}</code></pre>
+
+<p>Além de criar a instância da propriedade bgVideoPlayer, nós registramos nossa classe para ser notificada quando o vídeo acabar, porém vemos um warning que o GameScene.bgVideoDidEnd(notification:) não existe ainda, vamos criá-lo </p>
+
+<pre><code>func bgVideoDidEnd(notification: NSNotification) {
+        
+        let playerItem = notification.object as! AVPlayerItem
+        
+        playerItem.seek(to: kCMTimeZero)
+    }</code></pre>
+
+<p>o método bgVideoDidEnd será disparado quando o vídeo terminar, neste momento a única coisa que fazemos é voltar para o time zero, possibilitando o player continuar tocando o vídeo do início novamente.</p>
+
+<p>Execute e verifique que agora temos um vídeo em loop tocando no fundo da nossa game scene. Note que o frame rate no simulador caiu bastante, só que se você executar no dispositivo verá que teremos ainda 60fps, assim como dito anteriormente para acompanhar o frame rate real é necessário executar no dispositivo.</p>
+
+<p><img src="images/bgvideo.png" alt=""></p>
+
+<h2 id="toc_7">Pontuação e Vidas</h2>
+
+<p>Nós já temos labels para apresentar a pontuação e as vidas do nosso herói, agora vamos adicionar propriedades no GameScene.swift para controlar os valores que serão exibidos.</p>
+
+<p>Abaixo da propriedade bgVideoPlayer adicione as propriedades</p>
+
+<pre><code>    var score: Int = 0
+    var lives: Int = 0
+    var scoreLabel:SKLabelNode!
+    var livesLabel:SKLabelNode!
+    var planetNode:SKNode!
+    var astronautNode:SKNode!</code></pre>
+
+<p>Agora no initWithCoder abaixo da linha [videoNode play] adicione a inicialização dos nodes</p>
+
+<pre><code>self.scoreLabel = self.childNode(withName: &quot;scoreLabel&quot;) as! SKLabelNode
+        self.livesLabel = self.childNode(withName: &quot;livesLabel&quot;) as! SKLabelNode
+        
+        self.planetNode = self.childNode(withName: &quot;planet&quot;)!
+        self.astronautNode = self.planetNode.childNode(withName: &quot;astronaut&quot;)!
+
+self.setup()</code></pre>
+
+<p>Os Nodes não estão sendo instanciados e nem existe outlets, ao invés disso como já existem dentro do nosso GameScene.sks estamos recuperando suas instâncias chamando childNode(withName:).</p>
+
+<p>O método setup ainda não existe, nele vamos inicializar nosso game, vamos criá-lo
+para inicializar os valores, preencher os labels.</p>
+
+<pre><code>func setup()
+{
+        self.anchorPoint = CGPoint(x:0.5, y:0.5)
+        self.score = 0
+        self.scoreLabel.text = String(self.score)
+        self.lives = 5
+        self.livesLabel.text = String(self.lives)
+}
+</code></pre>
+
+<p>Executando podemos verificar que os labels já estão sendo alterados para os valores iniciais de início do jogo</p>
+
+<p><img src="images/initlabels.png" alt=""></p>
+
+<p>Vamos criar um método para nosso astronauta sofrer dano quando ele for atingido.</p>
+
+<pre><code>
+func damageAstronaut()
+    {
+        self.lives -= 1
+        self.livesLabel.text = String(self.lives)
+        
+        if self.lives == 0
+        {
+            // Game Over
+
+        } else {
+            // Animate damage
+            
+        }
+        
+    }</code></pre>
+
+<p>Por enquando não tratamos o game over nem a animação de dano, faremos isso mais adiante. Agora também vamos criar um método para quando o astronaulta marcar mais pontos.</p>
+
+<pre><code>   func addScore()
+    {
+        self.score += 1
+        self.scoreLabel.text = String(self.score)
+    }
+</code></pre>
+
+<h2 id="toc_8">Inimigos</h2>
+
+<p>Por enquanto, a vida desse astronaulta está muito tranquila, vamos adicionar nossos inimigos para adicionar mais emoção no jogo.</p>
+
+<p>Nosso inimigo será um cinturão de asteróides que será atraído pela gravidade da terra. Nosso platena está a salvo pois os asteróides desintegram na atmosfera, mas nosso herói precisará de toda sua habilidade para se esquivar deles.</p>
+
+<p>Nosso inimigo será um SKShapeNode, e para manter o código que o manipula isolado do GameScene vamos criar uma nova classe que extende o SKShapeNode.</p>
+
+<p>Vá em File -&gt; New -&gt; File ... </p>
+
+<p>No iOS -&gt; Source -&gt; Cocoa Touch Class
+<img src="images/newclass.png" alt=""></p>
+
+<p>Crie uma classe que extende SKShapeNode em Swift chamada AsteroidsBeltNode
+<img src="images/asteroidsbeltnode.png" alt=""></p>
+
+<p>No arquivo AsteroidsBeltNode.swift adicione o import SpriteKit</p>
+
+<pre><code>import SpriteKit</code></pre>
+
+<p>Agora vamos criar algumas propriedades</p>
+
+<pre><code>class AsteroidsBeltNode: SKShapeNode {
+
+    var rotation:CGAffineTransform
+    var holeAngle:CGFloat
+    var currentRadius:CGFloat</code></pre>
+
+<p>Nosso cinturão de asteróides será um arco com uma abertura semelhante ao desenho da letra &quot;C&quot; para isso vamos definir o ângulo da abertura e o raio do arco, além disso vamos rotacionar a abertura para cada vez ela aparecer em um lugar diferente.</p>
+
+<p>No AsteroidsBeltNode.m vamos implementar o init(radius:CGFloat, holeAngle:CGFloat)</p>
+
+<pre><code class="language-objectivec">init(radius:CGFloat, holeAngle:CGFloat){
+        
+        self.currentRadius = radius
+        self.holeAngle = holeAngle
+        self.rotation = CGAffineTransform(rotationAngle: CGFloat(arc4random()))
+        
+        super.init()
+        
+        let path = UIBezierPath(arcCenter: CGPoint.zero, radius: radius, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
+        
+        path.apply(self.rotation)
+        
+        self.path = path.cgPath
+        
+        self.fillColor = SKColor.clear
+        self.strokeColor = SKColor(red: 143/255, green: 1, blue: 1, alpha: 1)
+        
+        let shader = SKShader(fileNamed: &quot;enemyShader.fsh&quot;)
+        self.strokeShader = shader
+        
+        self.isAntialiased = false
+        self.lineWidth = 10
+
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError(&quot;init(coder:) has not been implemented&quot;)
+    }
+</code></pre>
+
+<p>Um SKShapeNode pode ser facilmente criado a partir de um UIBezierPath para isso apenas criamos um Arco como path. Depois definimos um ângulo aleatório para rotacionar esse arco.
+A novidade aqui é que para a cor estamos usando um shader, enemyShader.fsh. Shaders são implementações do OpenGL ES (Embeded Systems) que rodam direto na GPU, e usam uma liguagem própria Shader Language, que é parecida com linguagem C.
+Aqui não vamos abordar a linguagem SDL dos Shaders mas saiba que eles são um recurso muito poderoso para texturas dinâmicas por exemplo.</p>
+
+<p>Agora nosso inimigo precisa simular que está sendo atraído gravitacionalmente para a tela, com isso vamos implementar seu método update que será responsável por ir decrementando o raio ao longo do tempo</p>
+
+<pre><code> func update(){
+        
+        self.currentRadius *= 0.99
+        
+        let newPath = UIBezierPath(arcCenter: CGPoint.zero, radius: self.currentRadius, startAngle: 0, endAngle: 2 * .pi - self.holeAngle, clockwise: true)
+        
+        newPath.apply(self.rotation)
+        
+        self.path = newPath.cgPath
+          
+    }
+</code></pre>
+
+<p>No update reduzimos o raio para 99% do raio anterior e criamos um novo UIBezierPath com o novo raio atribuindo este novo path ao SKShapeNode</p>
+
+<p>Já temos nossa classe que representa o inimigo, agora vamos cuidar de colocar inimigos na nossa game scene.</p>
+
+<p>No nosso GameScene.swift abaixo da propriedade astronautNode vamos criar um Array para conter todos os inimigos</p>
+
+<pre><code class="language-objectivec">
+ var enemies = [AsteroidsBeltNode]()
+</code></pre>
+
+<p>Agora precisamos adicionar uma lógica para adicionar os inimigos na tela, faremos isso com o uso de NSTimer.</p>
+
+<p>No GameScene.swift fim do init?(coder aDecoder: NSCoder) depois da linha self.setup() adicione o Timer</p>
+
+<pre><code>Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(GameScene.addEnemy(timer:)), userInfo: nil, repeats: true)
+</code></pre>
+
+<p>Agora vamos criar o método addEnemy que está faltando</p>
+
+<pre><code class="language-objectivec">
+func addEnemy(timer: Timer)
+    {
+        let enemy = AsteroidsBeltNode(radius: self.size.width, holeAngle: .pi / 2 )
+        
+        self.enemies.append(enemy)
+        
+        self.addChild(enemy)
+    }
+    </code></pre>
+
+<p>Agora os inimigos já estão sendo adicionados porém precisamos para cada um chamar o método update de cada inimigo para eles simularem a atração gravitacional.</p>
+
+<p>Para toda Game Scene o Spritekit chama o método override func update(_ currentTime: TimeInterval) uma vez para cada frame, vamos aproveitar esse método para chamar os métodos update de todos os objetos dos inimigos</p>
+
+<pre><code class="language-objectivec"> override func update(_ currentTime: TimeInterval) {
+       
+        self.enemies.forEach { (enemy) in
+            enemy.update()
+        }
+
+}        </code></pre>
+
+<p>Se executarmos agora podemos ver nossos asteroides aparecendo.
+<img src="images/inimigos.png" alt=""></p>
+
+<p>O problema agora é que se os inimigos atingirem nosso herói nada acontece, na próxima sessão vamos resolver esse problema.</p>
+
+<h2 id="toc_9">Colisão</h2>
+
+<p>É muito comum em jogos a necessidade de detectar quando dois objetos colidem ou entram em contato.</p>
+
+<p>Para nosso jogo precisamos detectar quando os inimigos colidem com o herói para aplicar o dano no herói e quando os inimigos colidem com o planeta para contabilizar um ponto para o nosso game.</p>
+
+<p>No SpriteKit a colisão é aplicável com a física, sendo que pode também se detectar o contato, por exemplo quando dois objetos entram em contato, ou se sobrepõem ou por fim perdem o contato entre si.</p>
+
+<p>Basicamente o que vamos definir são mascaras de bits como se fossem uma categoria, no nosso caso 1 bit para o planeta, 1 bit para o astronauta e 1 bit para os inimigos. </p>
+
+<p>No arquivo GameScene.swift vamos incluir o protocolo de SKPhysicsContactDelegate</p>
+
+<pre><code>class GameScene: SKScene, SKPhysicsContactDelegate </code></pre>
+
+<p>E logo acima do arquivo GameScene abaixo dos import vamos criar uma struct 3 categorias que vamos usar no nosso jogo.</p>
+
+<pre><code>struct PhysicsCategory {
+    static let none: UInt32      = 0     // 0
+    static let astronaut: UInt32 = 0b1   // 1
+    static let enemy: UInt32     = 0b10  // 2
+    static let planet: UInt32    = 0b100 // 4
+}</code></pre>
+
+<p>Agora vamos programar as categorias de cada objeto dentro do init?(coder aDecoder: NSCoder)  abaixo da linha</p>
+
+<p>self.planetNode = self.childNode(withName: &quot;planet&quot;)!
+        self.astronautNode = self.planetNode.childNode(withName: &quot;astronaut&quot;)!</p>
+
+<p>vamos incluir as categorias</p>
+
+<pre><code>if let planetBody = self.planetNode.physicsBody
+{
+  planetBody.categoryBitMask = PhysicsCategory.planet
+  planetBody.contactTestBitMask = PhysicsCategory.enemy
+  planetBody.collisionBitMask = PhysicsCategory.none
+}
+   
+if let astronautBody = self.astronautNode.physicsBody
+{
+  astronautBody.categoryBitMask = PhysicsCategory.astronaut
+  astronautBody.contactTestBitMask = PhysicsCategory.enemy
+  astronautBody.collisionBitMask = PhysicsCategory.none
+}
+   
+self.physicsWorld.contactDelegate = self
+</code></pre>
+
+<p>Aqui nós estamos configuranto que o planeta é da categoria planetCategory e vamos testar seu contato com um enemyCategory, o collision é colocado em zero (PhysicsCategory.none) propositalmente pois não queremos simular a fisica dos objetos colidindo.</p>
+
+<p>Já o astronauta também está configurado para entrar em contato com o inimigo.</p>
+
+<p>Vamos agora configurar o Inimigo, vá até o método addEnemy e abaixo da variável  enemy</p>
+
+<p>let enemy = AsteroidsBeltNode(radius: self.size.width, holeAngle: .pi / 2 ) </p>
+
+<p>adicione o código</p>
+
+<pre><code class="language-objectivec">enemy.physicsBody = SKPhysicsBody(edgeChainFrom: enemy.path!)
+enemy.physicsBody?.categoryBitMask = PhysicsCategory.enemy
+enemy.physicsBody?.contactTestBitMask = PhysicsCategory.astronaut | PhysicsCategory.planet
+enemy.physicsBody?.collisionBitMask = PhysicsCategory.none
+        </code></pre>
+
+<p>Aqui estamos falando que nosso inimigo pode entrar em contato tanto com astronauta quanto com o planeta.</p>
+
+<p>Agora precisamos de uma atualização no AsteroidsBeltNode.swift dentro do método update() adicione no fim do método apos a linha self.path = newPath.cgPath</p>
+
+<pre><code>// Cria um novo corpo de física mantendo os valores do antigo
+// mas usando o novo CGPath
+if let physicsBody = self.physicsBody
+{
+  let categoryBitMask = physicsBody.categoryBitMask
+  let contactTestBitMask = physicsBody.contactTestBitMask
+  
+  self.physicsBody = SKPhysicsBody(edgeChainFrom: newPath.cgPath)
+  self.physicsBody?.categoryBitMask = categoryBitMask
+  self.physicsBody?.contactTestBitMask = contactTestBitMask
+  self.physicsBody?.collisionBitMask = 0
+}</code></pre>
+
+<p>Aqui estamos pegando os valores antigos de contato e criando um novo SKPhysicsBody agora para o newPath e preenchendo novamente os valores desse corpo fisico.</p>
+
+<p>Toda vez que os SKNodes entrarem em contato o método didBegin(_ contact: SKPhysicsContact) é disparado e é nele que vamos verificar o contato e disparar os métodos que queremos.</p>
+
+<pre><code>
+ func didBegin(_ contact: SKPhysicsContact) {
+        
+        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        let enemy:AsteroidsBeltNode?
+        
+        if contact.bodyA.categoryBitMask == PhysicsCategory.enemy
+        {
+            enemy = contact.bodyA.node as? AsteroidsBeltNode
+            
+        } else {
+            
+            enemy = contact.bodyB.node as? AsteroidsBeltNode
+        }
+        
+        if enemy?.parent != nil
+        {
+            if collision == PhysicsCategory.astronaut | PhysicsCategory.enemy
+            {
+                // Inimigo atingiu o astronaulta
+                self.damageAstronaut()
+            
+            } else if collision == PhysicsCategory.planet | PhysicsCategory.enemy
+            {
+                // Inimigo atingiu o planeta
+                self.addScore()
+            }
+
+            // remove o inimigo se sempre que entrarem em contato com qualquer coisa
+            if let index = self.enemies.index(of: enemy!) {
+                
+                self.enemies.remove(at: index)
+            }
+            
+            enemy?.removeFromParent()
+        }
+    }
+</code></pre>
+
+<p>Pronto, se você executar o jogo verá que agora se um inimigo colidir com o astronauta ele tira uma vida ou se o inimigo colidir com o planeta ele aumenta um ponto.</p>
+
+<p><img src="images/collision.png" alt=""></p>
+
+<p>Porém para ver isso estamos contando com a sorte, pois nosso astronauta ainda está sem chance de se defender. Vamos cuidar disso na próxima sessão.</p>
+
+<h2 id="toc_10">Movendo nosso Herói</h2>
+
+<p>Vamos dar ao nosso herói uma chance para se esquivar, vamos usar o movimento de swipe no X para mover o astronauta.</p>
+
+<p>No GameScene.swift adicione as propriedades</p>
+
+<pre><code>var astronautAngle:CGFloat = 0
+var astronautOrbitRadius:CGFloat = 0
+var astronautSpeed:CGPoint = CGPoint.zero</code></pre>
+
+<p>No fim do metodo setup vamos inicializar os valores</p>
+
+<pre><code>self.astronautAngle = 0;
+        
+self.astronautOrbitRadius = self.planetNode.frame.size.width/2 + self.astronautNode.frame.size.width/2 + 50</code></pre>
+
+<p>Agora no método da GameScene chamado didMove(to view: SKView) (equivalente do viewDidAppear) nele vamos adicionar um Pan Gesture</p>
+
+<pre><code>override func didMove(to view: SKView) {
+        
+   let panGesture = UIPanGestureRecognizer(target: self,
+                       action: #selector(GameScene.handlePanGesture(panGestureRecognizer:)))
+   
+   view.addGestureRecognizer(panGesture)
+}
+</code></pre>
+
+<p>Agora vamos criar o método que está faltando handlePanGesture aqui a única coisa é atualizar a velocidade do astronauta.</p>
+
+<pre><code class="language-objectivec">func handlePanGesture(panGestureRecognizer:UIPanGestureRecognizer)
+{
+   self.astronautSpeed = panGestureRecognizer.velocity(in: self.view)
+}</code></pre>
+
+<p>Agora vamos posicionar nosso astronauta no fim do método update adicione</p>
+
+<pre><code>self.astronautSpeed = CGPoint(x: self.astronautSpeed.x / 1.1,
+                                      y: self.astronautSpeed.y)
+        
+self.astronautAngle += self.astronautSpeed.x / 2000
+   
+let astronautX = self.astronautOrbitRadius * cos(self.astronautAngle)
+let astronautY = self.astronautOrbitRadius * sin(self.astronautAngle)
+   
+self.astronautNode.position = CGPoint(x:astronautX,
+                                              y:astronautY)</code></pre>
+
+<p>Aqui estamos incluindo um fator de desaceleração de 1.1 e um valor de 2000 para traduzir um fator do gesto para a velocidade. Estamos ignorando o Pan em Y e posicionando o astronauta em torno do planeta para ele parecer em órbita.</p>
+
+<p>Execute o projeto e veja que agora você consegue mover o astronauta fazendo um gestos tanto na Horizontal quanto na Vertical.</p>
+
+<h2 id="toc_11">Adicionando Ação</h2>
+
+<p>SpriteKit tem um recurso muito poderoso que são SKActions, elas podem ser usadas para aplicar efeitos, mover, escalar, etc.. qualquer SKNode.</p>
+
+<p>Vamos usar actions para animar o dano no astronauta e o label de score.</p>
+
+<p>No GameScene.swift adicione suas propriedades</p>
+
+<pre><code>var damageAction:SKAction!
+var scoreAction:SKAction!</code></pre>
+
+<p>No método init?(coder aDecoder: NSCoder) adicionar após o self.physicsWorld.contactDelegate = self uma SKAction para pintar o astronauta de vermelho quando ele sofrer dano</p>
+
+<pre><code>self.damageAction = SKAction.sequence([
+                SKAction.colorize(with: SKColor.red, colorBlendFactor: 1.0, duration: 0.0),
+                SKAction.colorize(withColorBlendFactor: 0.0, duration: 1.0)
+            ])</code></pre>
+
+<p>A SKAction sequence é uma Action que executa sequencialmente todas as SKAction que ela possui, estamos aplicando uma colorize de vermelho com duration de 0.0, isso quer dizer, imediatamente. Depois uma action que volta a cor original que dura 1.0 segundo.</p>
+
+<p>Agora vamos para a animação da label de Score, adicione</p>
+
+<pre><code class="language-objectivec">self.scoreAction = SKAction.group([
+                SKAction.sequence([
+                        SKAction.scale(to: 2.0, duration: 0.2),
+                        SKAction.scale(to: 1.0, duration: 0.2)
+                    ]),
+                
+                SKAction.sequence([
+                    SKAction.run
+                        {
+                            self.scoreLabel.color = SKColor.orange
+                            self.scoreLabel.colorBlendFactor = 1.0
+                        },
+                    SKAction.wait(forDuration: 0.2),
+                    SKAction.run
+                        {
+                            self.scoreLabel.colorBlendFactor = 0
+                        }
+                    ]),
+            ])
+</code></pre>
+
+<p>Aqui vemos uma SKAction group que é um grupo que executa todas as SKActions paralelamente, veja que SKAction de group ou sequence podem ser aninhadas. Outro detalhe é a SKAction de run {} que executa um bloco de código no qual pode-se alterar quaisquer objetos.</p>
+
+<p>SKAction wait(forDuration:) faz uma pausa entre as SKActions que está executando na sequence.</p>
+
+<p>Criadas as actions basta adicionar o código para chamá-las.</p>
+
+<p>No método damageAstronaut abaixo do comentário // Animate damage adicione a execução da action de damage</p>
+
+<pre><code class="language-objectivec">// Animate damage
+
+self.astronautNode.run(self.damageAction)</code></pre>
+
+<p>No fim do método addScore vamos chamar executar a action de animação do score</p>
+
+<pre><code class="language-objectivec">self.scoreLabel.run(self.scoreAction)</code></pre>
+
+<p>Execute e veja que agora temos animações do astronauta e da label de score</p>
+
+<p><img src="images/damageaction.png" alt=""></p>
+
+<h2 id="toc_12">Sons</h2>
+
+<p>Os efeitos sonoros são uma parte importante dos jogos, vamos adicionar uma música de fundo e uns efeitos sonoros para deixar nosso jogo mais empolgante.</p>
+
+<p>No arquivo GameScene.swift adicione uma propriedade de um AVAudioPlayer </p>
+
+<pre><code class="language-objectivec">var bgMusicPlayer: AVAudioPlayer!</code></pre>
+
+<p>Vamos iniciar com uma música de background, adicione o método abaixo</p>
+
+<pre><code>func playBackgroundMusic()
+{  
+   if self.bgMusicPlayer == nil {
+       
+       let musicPath = Bundle.main.path(forResource: &quot;backgroundmusic&quot;, ofType: &quot;mp4&quot;)
+       let musicUrl = URL(fileURLWithPath: musicPath!)
+       
+       self.bgMusicPlayer = try! AVAudioPlayer(contentsOf: musicUrl)
+       
+       self.bgMusicPlayer.numberOfLoops = -1 // tocar para sempre
+       
+       self.bgMusicPlayer.prepareToPlay()
+   }
+   
+   self.bgMusicPlayer.pause()
+   self.bgMusicPlayer.currentTime = 0
+   self.bgMusicPlayer.play()
+}</code></pre>
+
+<p>Aqui criamos uma instância do AVAudioPlayer. Depois pausamos a musica (caso estivesse tocando de um game antes) para colocarmos a musica no começo currentTime = 0 e por fim iniciamos com play.</p>
+
+<p>Agora no fim do método setup adicione a chamada para playBackgroundMusic</p>
+
+<pre><code> self.playBackgroundMusic()</code></pre>
+
+<p>Execute e veja que agora temos uma música de fundo tocando dando muito mais emoção para o jogo.</p>
+
+<p>Agora vamos adicionar efeitos sonoros quando o usuário sofrer dano e quando ganhar ponto. Para isso vamos aproveitar de uma SKAction playSoundFileNamed e alterar as duas actions que já temos para isso. </p>
+
+<p>No método init?(coder aDecoder: NSCoder) localize a self.damageAction e altere para</p>
+
+<pre><code>self.damageAction = SKAction.sequence([
+ SKAction.playSoundFileNamed(&quot;hit.wav&quot;, waitForCompletion: false),
+ SKAction.colorize(with: SKColor.red, colorBlendFactor: 1.0, duration: 0.0),
+ SKAction.colorize(withColorBlendFactor: 0.0, duration: 1.0)
+])</code></pre>
+
+<p>Perceba que só foi adicionado SKAction.playSoundFileNamed(&quot;hit.wav&quot;, waitForCompletion: false) no inicio da seguence</p>
+
+<p>Da mesma forma vamos alterar também a self.scoreAction adicionando SKAction.playSoundFileNamed(&quot;score.wav&quot;, waitForCompletion: false) como primeiro elemento do group.</p>
+
+<pre><code class="language-objectivec"> self.scoreAction = SKAction.group([
+      SKAction.playSoundFileNamed(&quot;score.wav&quot;, waitForCompletion: false),
+      
+      SKAction.sequence([
+              SKAction.scale(to: 2.0, duration: 0.2),
+              SKAction.scale(to: 1.0, duration: 0.2)
+          ]),
+      
+      SKAction.sequence([
+          SKAction.run
+              {
+                  self.scoreLabel.color = SKColor.orange
+                  self.scoreLabel.colorBlendFactor = 1.0
+              },
+          SKAction.wait(forDuration: 0.2),
+          SKAction.run
+              {
+                  self.scoreLabel.colorBlendFactor = 0
+              }
+          ]),
+  ])</code></pre>
+
+<p>Pronto, execute e verifique que agora temos efeitos sonoros tocando quando se toma dano e quando se ganha pontos.</p>
+
+<p>Se não estiver ouvindo no seu dispositivo verifique se o volume não esta no mudo ou se a chave de silencioso não está ligada</p>
+
+<p><img src="images/iphone-rs-switch.jpg" alt=""></p>
+
+<h2 id="toc_13">Game Over</h2>
+
+<p>Para terminar vamos apenas incluir um tratamento de Game Over para poder reiniciar o jogo quando perdermos todas as vidas.</p>
+
+<p>Clique no GameScene.sks e faça uma cópia da label SCORE com Command+C e Command+V.</p>
+
+<p>E da nova label altere</p>
+
+<p>Name: gameoverLabel</p>
+
+<p>Text: GAME OVER</p>
+
+<p>Font: tamanho 72</p>
+
+<p>Posisiton: X 0 Y 200</p>
+
+<p><img src="images/gameoverlabel.png" alt=""></p>
+
+<p>Agora mais uma cópia da label SCORE alterando</p>
+
+<p>Name: tapLabel</p>
+
+<p>Parent: gameoverLabel</p>
+
+<p>Text: Toque para jogar novamente</p>
+
+<p>Font: tamanho 44</p>
+
+<p>Posisiton: X 0 Y -80</p>
+
+<p><img src="images/taplabel.png" alt=""></p>
+
+<p>Note que a segunda label tapLabel foi colocada como filha da gameoverLabel para quando controlarmos a visibilidade da game over label a tap label ter o mesmo comportamento.</p>
+
+<p>Caso você não consiga mais selecionar a tapLabel com o clique você pode acessá-la pelo menu de hierarquia.</p>
+
+<p><img src="images/menuhierarquia.png" alt=""></p>
+
+<p>Ok agora no GameScene.swift vamos incluir uma propriedade</p>
+
+<pre><code>var gameoverLabel:SKLabelNode!</code></pre>
+
+<p>No no método init?(coder aDecoder: NSCoder) antes da linha self.setup() vamos adicionar</p>
+
+<pre><code>self.gameoverLabel = self.childNode(withName: &quot;gameoverLabel&quot;) as! SKLabelNode
+self.gameoverLabel.isHidden = true</code></pre>
+
+<p>Aqui pegamos a label de gameover e inicializamos ela como hidden</p>
+
+<p>Agora no método damageAstronaut adicione o trecho abaixo do comentário // Game Over</p>
+
+<pre><code>// Game Over
+
+self.gameoverLabel.isHidden = false
+self.scene?.view?.isPaused = true
+  
+// Tap to replay
+  
+self.scene?.view?.addGestureRecognizer(
+ UITapGestureRecognizer(target: self,
+     action:#selector(GameScene.handleTapGesture(tapGestureRecognizer:)) ))
+
+self.bgMusicPlayer.pause()
+
+        </code></pre>
+
+<p>No Game Over nós fazemos a label aparecer, pausamos nossa scene (parando todas as actions e a physics, adicionamos um UITapGestureRecognizer e pausamos a música de background.</p>
+
+<p>Agora só falta adicionar o metodo handleTapGesture que reinicia o estado do jogo e dispara o jogo novamente chamando o setup</p>
+
+<pre><code> func handleTapGesture(tapGestureRecognizer:UITapGestureRecognizer)
+    {
+        // Restart de Game
+        self.scene?.view?.removeGestureRecognizer(tapGestureRecognizer)
+        
+        self.scene?.view?.isPaused = false
+        self.gameoverLabel.isHidden = true
+        
+        self.enemies.forEach { (enemy) in
+            enemy.removeFromParent()
+        }
+        
+        self.enemies.removeAll()
+        
+        self.setup()
+    }
+</code></pre>
+
+<h2 id="toc_14">Exercício da Semana</h2>
+
+<p>Como exercício da semana</p>
+
+<p>Desafios:</p>
+
+<ul>
+<li><p>Adicione um sistema de partículas no astronauta para parecer que ele está com um jetpack soltando ar, fogo ou plasma a sua escolha </p></li>
+<li><p>Forneça para o jogador a informação que ele precisa fazer swipe horizontal para controlar o astronauta no início do jogo. (Caso prefira pode ser um tutorial)</p></li>
+<li><p>Faça o jogo ir aumentando a dificuldade conforme o score aumenta</p></li>
+</ul>
+
+<p>Desafios Adicionais:</p>
+
+<ul>
+<li>Adicione mais uma funcionalidade ao jogo. Podendo ser power ups, sons, etc.</li>
+</ul>
+
+<p>Desafio Ouro:</p>
+
+<ul>
+<li>Integração com Game Center</li>
+</ul>
+
+<p>Desafio Insano:</p>
+
+<ul>
+<li>Desenvolva e/ou utilize mais Shaders</li>
+</ul>
+
+<h2 id="toc_15">Links úteis</h2>
+
+<ul>
+<li><p><a href="https://developer.apple.com/videos/wwdc/2013/#502">WWDC 2013 - Introduction to Sprite Kit</a></p></li>
+<li><p><a href="https://developer.apple.com/videos/wwdc/2013/#503">WWDC 2013 - Designing Games with Sprite Kit</a></p></li>
+<li><p><a href="https://developer.apple.com/videos/wwdc/2014/#606">WWDC 2014 - What&#39;s New in SpriteKit</a></p></li>
+<li><p><a href="https://developer.apple.com/videos/wwdc/2014/#608">WWDC 2014 - Best Practices for Building SpriteKit Games</a></p></li>
+<li><p><a href="http://www.bfxr.net/">Bfxr gerador de sons para games</a></p></li>
+<li><p><a href="http://www.freesound.org/">Sons gratuitos</a></p></li>
+<li><p><a href="http://www.raywenderlich.com/store/ios-games-by-tutorials">iOS Games by Tutorials: livro pago mas muito bom, na ultima versão atualizado para Swift</a></p></li>
+<li><p><a href="https://www.opengl.org/registry/doc/GLSLangSpec.Full.1.40.05.pdf">Open GL Shader Language</a></p></li>
+<li><p><a href="https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/SpriteKit_PG/Introduction/Introduction.html">Apple SpriteKit Programming Guide</a></p></li>
+<li><p><a href="https://developer.apple.com/library/ios/documentation/SpriteKit/Reference/SpriteKitFramework_Ref/#classes">SpriteKit Framework Reference</a></p></li>
+<li><p><a href="https://itunes.apple.com/br/course/friday-session-spritekit-ios/id733644550?i=315604133&amp;l=en&amp;mt=2">Friday Session: Spritekit iOs Framework - Stanford</a></p></li>
+<li><p><a href="https://www.shadertoy.com/">Shaders</a></p></li>
+</ul>
+
+
+</body>
+
+</html>

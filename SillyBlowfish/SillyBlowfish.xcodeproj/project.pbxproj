@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4924DA2B1ECCF71300282D9F /* sound7.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4924DA231ECCF71300282D9F /* sound7.caf */; };
+		4924DA2C1ECCF71300282D9F /* sound1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4924DA241ECCF71300282D9F /* sound1.caf */; };
+		4924DA2D1ECCF71300282D9F /* sound6.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4924DA251ECCF71300282D9F /* sound6.caf */; };
+		4924DA2E1ECCF71300282D9F /* sound3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4924DA261ECCF71300282D9F /* sound3.caf */; };
+		4924DA2F1ECCF71300282D9F /* sound5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4924DA271ECCF71300282D9F /* sound5.caf */; };
+		4924DA301ECCF71300282D9F /* sound2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4924DA281ECCF71300282D9F /* sound2.caf */; };
+		4924DA311ECCF71300282D9F /* sound4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4924DA291ECCF71300282D9F /* sound4.caf */; };
+		4924DA321ECCF71300282D9F /* fart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4924DA2A1ECCF71300282D9F /* fart.mp3 */; };
+		49921B781ECC869C009B42C2 /* EyeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49921B771ECC869C009B42C2 /* EyeLayer.swift */; };
+		49921B7A1ECC8848009B42C2 /* SillyBlowfishEyes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49921B791ECC8848009B42C2 /* SillyBlowfishEyes.swift */; };
+		49921B7C1ECCB151009B42C2 /* GeometryUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49921B7B1ECCB151009B42C2 /* GeometryUtil.swift */; };
+		49F427941ECB876300DB1226 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F427931ECB876300DB1226 /* AppDelegate.swift */; };
+		49F427961ECB876300DB1226 /* SillyBlowfishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F427951ECB876300DB1226 /* SillyBlowfishViewController.swift */; };
+		49F427991ECB876300DB1226 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F427971ECB876300DB1226 /* Main.storyboard */; };
+		49F4279B1ECB876300DB1226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F4279A1ECB876300DB1226 /* Assets.xcassets */; };
+		49F4279E1ECB876300DB1226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F4279C1ECB876300DB1226 /* LaunchScreen.storyboard */; };
+		49F427AB1ECB87DF00DB1226 /* SillyBlowfishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F427AA1ECB87DF00DB1226 /* SillyBlowfishView.swift */; };
+		49F427AD1ECB888200DB1226 /* SpriteImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F427AC1ECB888200DB1226 /* SpriteImageRepository.swift */; };
+		49F427AF1ECB89B900DB1226 /* SpriteUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F427AE1ECB89B900DB1226 /* SpriteUtil.swift */; };
+		53CA5AE21EEB054400DDF2AA /* CustomGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CA5AE11EEB054400DDF2AA /* CustomGesture.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4924DA231ECCF71300282D9F /* sound7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound7.caf; sourceTree = "<group>"; };
+		4924DA241ECCF71300282D9F /* sound1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound1.caf; sourceTree = "<group>"; };
+		4924DA251ECCF71300282D9F /* sound6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound6.caf; sourceTree = "<group>"; };
+		4924DA261ECCF71300282D9F /* sound3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound3.caf; sourceTree = "<group>"; };
+		4924DA271ECCF71300282D9F /* sound5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound5.caf; sourceTree = "<group>"; };
+		4924DA281ECCF71300282D9F /* sound2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound2.caf; sourceTree = "<group>"; };
+		4924DA291ECCF71300282D9F /* sound4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound4.caf; sourceTree = "<group>"; };
+		4924DA2A1ECCF71300282D9F /* fart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fart.mp3; sourceTree = "<group>"; };
+		49921B771ECC869C009B42C2 /* EyeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeLayer.swift; sourceTree = "<group>"; };
+		49921B791ECC8848009B42C2 /* SillyBlowfishEyes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SillyBlowfishEyes.swift; sourceTree = "<group>"; };
+		49921B7B1ECCB151009B42C2 /* GeometryUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryUtil.swift; sourceTree = "<group>"; };
+		49F427901ECB876300DB1226 /* SillyBlowfish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SillyBlowfish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F427931ECB876300DB1226 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49F427951ECB876300DB1226 /* SillyBlowfishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SillyBlowfishViewController.swift; sourceTree = "<group>"; };
+		49F427981ECB876300DB1226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49F4279A1ECB876300DB1226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49F4279D1ECB876300DB1226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49F4279F1ECB876300DB1226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F427AA1ECB87DF00DB1226 /* SillyBlowfishView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SillyBlowfishView.swift; sourceTree = "<group>"; };
+		49F427AC1ECB888200DB1226 /* SpriteImageRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteImageRepository.swift; sourceTree = "<group>"; };
+		49F427AE1ECB89B900DB1226 /* SpriteUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteUtil.swift; sourceTree = "<group>"; };
+		53CA5AE11EEB054400DDF2AA /* CustomGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomGesture.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49F4278D1ECB876300DB1226 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4924DA221ECCF6F400282D9F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4924DA231ECCF71300282D9F /* sound7.caf */,
+				4924DA241ECCF71300282D9F /* sound1.caf */,
+				4924DA251ECCF71300282D9F /* sound6.caf */,
+				4924DA261ECCF71300282D9F /* sound3.caf */,
+				4924DA271ECCF71300282D9F /* sound5.caf */,
+				4924DA281ECCF71300282D9F /* sound2.caf */,
+				4924DA291ECCF71300282D9F /* sound4.caf */,
+				4924DA2A1ECCF71300282D9F /* fart.mp3 */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		49F427871ECB876300DB1226 = {
+			isa = PBXGroup;
+			children = (
+				49F427921ECB876300DB1226 /* SillyBlowfish */,
+				49F427911ECB876300DB1226 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49F427911ECB876300DB1226 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49F427901ECB876300DB1226 /* SillyBlowfish.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49F427921ECB876300DB1226 /* SillyBlowfish */ = {
+			isa = PBXGroup;
+			children = (
+				49F427A81ECB879B00DB1226 /* View */,
+				49F427A71ECB879700DB1226 /* Model */,
+				49F427A61ECB879100DB1226 /* Controller */,
+				4924DA221ECCF6F400282D9F /* Resources */,
+				49F427931ECB876300DB1226 /* AppDelegate.swift */,
+				49F427971ECB876300DB1226 /* Main.storyboard */,
+				49F4279A1ECB876300DB1226 /* Assets.xcassets */,
+				49F4279C1ECB876300DB1226 /* LaunchScreen.storyboard */,
+				49F4279F1ECB876300DB1226 /* Info.plist */,
+			);
+			path = SillyBlowfish;
+			sourceTree = "<group>";
+		};
+		49F427A51ECB878C00DB1226 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				49F427AE1ECB89B900DB1226 /* SpriteUtil.swift */,
+				49921B7B1ECCB151009B42C2 /* GeometryUtil.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		49F427A61ECB879100DB1226 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49F427951ECB876300DB1226 /* SillyBlowfishViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		49F427A71ECB879700DB1226 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53CA5AE11EEB054400DDF2AA /* CustomGesture.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		49F427A81ECB879B00DB1226 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49F427A91ECB879F00DB1226 /* Blowfish */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		49F427A91ECB879F00DB1226 /* Blowfish */ = {
+			isa = PBXGroup;
+			children = (
+				49F427A51ECB878C00DB1226 /* Util */,
+				49F427AA1ECB87DF00DB1226 /* SillyBlowfishView.swift */,
+				49F427AC1ECB888200DB1226 /* SpriteImageRepository.swift */,
+				49921B771ECC869C009B42C2 /* EyeLayer.swift */,
+				49921B791ECC8848009B42C2 /* SillyBlowfishEyes.swift */,
+			);
+			name = Blowfish;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49F4278F1ECB876300DB1226 /* SillyBlowfish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49F427A21ECB876300DB1226 /* Build configuration list for PBXNativeTarget "SillyBlowfish" */;
+			buildPhases = (
+				49F4278C1ECB876300DB1226 /* Sources */,
+				49F4278D1ECB876300DB1226 /* Frameworks */,
+				49F4278E1ECB876300DB1226 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SillyBlowfish;
+			productName = SillyBlowfish;
+			productReference = 49F427901ECB876300DB1226 /* SillyBlowfish.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49F427881ECB876300DB1226 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = BEPiD;
+				TargetAttributes = {
+					49F4278F1ECB876300DB1226 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = X6FRCZP2YP;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 49F4278B1ECB876300DB1226 /* Build configuration list for PBXProject "SillyBlowfish" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49F427871ECB876300DB1226;
+			productRefGroup = 49F427911ECB876300DB1226 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49F4278F1ECB876300DB1226 /* SillyBlowfish */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49F4278E1ECB876300DB1226 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4924DA321ECCF71300282D9F /* fart.mp3 in Resources */,
+				4924DA301ECCF71300282D9F /* sound2.caf in Resources */,
+				4924DA2F1ECCF71300282D9F /* sound5.caf in Resources */,
+				4924DA2C1ECCF71300282D9F /* sound1.caf in Resources */,
+				49F4279E1ECB876300DB1226 /* LaunchScreen.storyboard in Resources */,
+				4924DA2E1ECCF71300282D9F /* sound3.caf in Resources */,
+				4924DA311ECCF71300282D9F /* sound4.caf in Resources */,
+				49F4279B1ECB876300DB1226 /* Assets.xcassets in Resources */,
+				4924DA2B1ECCF71300282D9F /* sound7.caf in Resources */,
+				49F427991ECB876300DB1226 /* Main.storyboard in Resources */,
+				4924DA2D1ECCF71300282D9F /* sound6.caf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49F4278C1ECB876300DB1226 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49F427AD1ECB888200DB1226 /* SpriteImageRepository.swift in Sources */,
+				49921B7A1ECC8848009B42C2 /* SillyBlowfishEyes.swift in Sources */,
+				49921B781ECC869C009B42C2 /* EyeLayer.swift in Sources */,
+				49F427961ECB876300DB1226 /* SillyBlowfishViewController.swift in Sources */,
+				49F427AF1ECB89B900DB1226 /* SpriteUtil.swift in Sources */,
+				53CA5AE21EEB054400DDF2AA /* CustomGesture.swift in Sources */,
+				49F427AB1ECB87DF00DB1226 /* SillyBlowfishView.swift in Sources */,
+				49F427941ECB876300DB1226 /* AppDelegate.swift in Sources */,
+				49921B7C1ECCB151009B42C2 /* GeometryUtil.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49F427971ECB876300DB1226 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49F427981ECB876300DB1226 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49F4279C1ECB876300DB1226 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49F4279D1ECB876300DB1226 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49F427A01ECB876300DB1226 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49F427A11ECB876300DB1226 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49F427A31ECB876300DB1226 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X6FRCZP2YP;
+				INFOPLIST_FILE = SillyBlowfish/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.bepid.SillyBlowfish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		49F427A41ECB876300DB1226 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X6FRCZP2YP;
+				INFOPLIST_FILE = SillyBlowfish/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.bepid.SillyBlowfish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49F4278B1ECB876300DB1226 /* Build configuration list for PBXProject "SillyBlowfish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F427A01ECB876300DB1226 /* Debug */,
+				49F427A11ECB876300DB1226 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49F427A21ECB876300DB1226 /* Build configuration list for PBXNativeTarget "SillyBlowfish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F427A31ECB876300DB1226 /* Debug */,
+				49F427A41ECB876300DB1226 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49F427881ECB876300DB1226 /* Project object */;
+}

@@ -229,7 +229,7 @@ public class MarvelApiRequest: NSObject {
     ///
     /// - Parameter fromData: Data recebido que contem a string JSON
     /// - Returns: dicionário com os dados do JSON
-    fileprivate func json(fromData: Data) -> [String: AnyObject]?{
+    fileprivate func json(fromData: Data) -> [String: AnyObject]?{
         
         var parsed:[String: AnyObject]  = [String: AnyObject]()
         

@@ -1,0 +1,11 @@
+Nao foi dessa vez o ouro olimpico... (nem o bronze, na verdade
+
+O que foi feito:
+- Busca de países na API
+- Busca de cidades baseada em países
+- Busca de locations (não está funcionando, motivo desconhecido)
+
+- Fluxo de navegação entre os níveis de busca
+- Os dados de cada location não estão sendo buscados na API
+
+Foi mal.
